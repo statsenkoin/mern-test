@@ -25,3 +25,8 @@ npm uninstall colors
 - refactoring: app settings->app.js
 - create mongoose model Post
 - create routes/posts.js
+
+`03-controllers-helpers`
+
+- create helpers handleMongooseError, HttpError, ctrlWrapper
+- create posts controllers
