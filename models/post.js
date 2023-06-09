@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose';
+import handleMongooseError from '../helpers/handleMongooseError.js';
 
 const postDbSchema = new Schema(
   {
@@ -16,11 +17,6 @@ const postDbSchema = new Schema(
     timestamps: true,
   }
 );
-
-const handleMongooseError = (error, data, next) => {
-  error.status = 400;
-  next();
-};
 
 postDbSchema.post('save', handleMongooseError);
 
