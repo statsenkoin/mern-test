@@ -13,6 +13,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 
+// middlewares
 app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
@@ -22,10 +23,8 @@ app.use(
   })
 );
 
+// routes
 app.use('/api/posts', postRouter);
-// app.get('/', (req, res) => {
-//   res.json({ message: 'Get request' });
-// });
 
 app.use((req, res) => {
   res.status(404).json({ message: 'Not found' });
