@@ -1,9 +1,9 @@
+import fs from 'fs/promises';
+import path from 'path';
+
 import Post from '../models/post.js';
 import ctrlWrapper from '../helpers/ctrlWrapper.js';
 import HttpError from '../helpers/HttpError.js';
-
-import fs from 'fs/promises';
-import path from 'path';
 
 const imageDir = path.join(process.cwd(), 'public', 'images');
 
@@ -16,6 +16,7 @@ const createPost = async (req, res, next) => {
   const { path: tempUpload, filename } = req.file;
   const resultUpload = path.join(imageDir, filename);
   await fs.rename(tempUpload, resultUpload);
+  //   const imagePath = path.join('public', 'images', filename);
   const imagePath = path.join('public', 'images', filename);
 
   const newPost = { ...req.body, imagePath };

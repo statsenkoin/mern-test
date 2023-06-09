@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import ctrlPosts from '../controllers/posts.js';
 
+import ctrlPosts from '../controllers/posts.js';
 import multerUpload from '../middlewares/multerUpload.js';
 
 const router = new Router();

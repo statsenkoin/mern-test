@@ -18,19 +18,7 @@ app.use(
     stream: fs.createWriteStream(path.join(process.cwd(), 'server.log')),
   })
 );
-// ============================================
-// const tempDir = path.join(__dirname, 'temp');
-// const multerConfig = multer.diskStorage({
-//   destination: tempDir,
-//   filename: (req, file, cb) => {
-//     cb(null, file.originalname);
-//   },
-// });
-
-// const upload = multer({
-//   storage: multerConfig,
-// });
-// ============================================
+app.use(express.static('public'));
 
 // routes
 app.use('/api/posts', postRouter);
