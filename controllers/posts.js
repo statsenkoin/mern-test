@@ -4,9 +4,6 @@ import HttpError from '../helpers/HttpError.js';
 
 const getAll = async (req, res, next) => {
   const result = await Post.find();
-  if (!result.length) {
-    res.json({ message: 'DB is empty' });
-  }
   res.json(result);
 };
 
@@ -20,9 +17,6 @@ const deletePost = async (req, res, next) => {
   const result = await Post.findByIdAndDelete(id);
   if (!result) {
     throw HttpError(404, 'Post not found');
-    //   const error = new Error('Post not found');
-    //   error.status = 404;
-    //   throw error;
   }
   res.json({ message: 'Post deleted' });
 };
