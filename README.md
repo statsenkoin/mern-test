@@ -13,3 +13,15 @@ npm i nodemon -D
 
 - add .gitignore, .env
 - init server, connect to MongoDB, logging
+
+`02-refactoring`
+
+- uninstall colors
+
+```
+npm uninstall colors
+```
+
+- refactoring: app settings->app.js
+- create mongoose model Post
+- create routes/posts.js
