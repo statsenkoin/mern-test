@@ -4,12 +4,8 @@ import morgan from 'morgan';
 import fs from 'fs';
 import 'dotenv/config';
 import path from 'path';
-import { fileURLToPath } from 'url';
 
 import { router as postRouter } from './routes/posts.js';
-
-// In an ES module, you cannot use __dirname.
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 
@@ -19,9 +15,22 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use(
   morgan('combined', {
-    stream: fs.createWriteStream(path.join(__dirname, 'server.log')),
+    stream: fs.createWriteStream(path.join(process.cwd(), 'server.log')),
   })
 );
+// ============================================
+// const tempDir = path.join(__dirname, 'temp');
+// const multerConfig = multer.diskStorage({
+//   destination: tempDir,
+//   filename: (req, file, cb) => {
+//     cb(null, file.originalname);
+//   },
+// });
+
+// const upload = multer({
+//   storage: multerConfig,
+// });
+// ============================================
 
 // routes
 app.use('/api/posts', postRouter);

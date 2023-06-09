@@ -11,6 +11,9 @@ const postDbSchema = new Schema(
       type: String,
       default: 'No description',
     },
+    imagePath: {
+      type: String,
+    },
   },
   {
     versionKey: false,

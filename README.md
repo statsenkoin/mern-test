@@ -30,3 +30,13 @@ npm uninstall colors
 
 - create helpers handleMongooseError, HttpError, ctrlWrapper
 - create posts controllers
+
+`04-image-to-file`
+
+```
+npm i multer nanoid
+```
+
+- create folders temp, public/images +.gitkeep
+- add middleware multerUpload, rename file
+- upload -> tempFolder -> public/images
