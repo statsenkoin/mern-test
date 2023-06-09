@@ -16,7 +16,6 @@ const createPost = async (req, res, next) => {
   const { path: tempUpload, filename } = req.file;
   const resultUpload = path.join(imageDir, filename);
   await fs.rename(tempUpload, resultUpload);
-  //   const imagePath = path.join('public', 'images', filename);
   const imagePath = path.join('public', 'images', filename);
 
   const newPost = { ...req.body, imagePath };
