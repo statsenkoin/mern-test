@@ -40,3 +40,15 @@ npm i multer nanoid
 - create folders temp, public/images +.gitkeep
 - add middleware multerUpload, rename file
 - upload -> tempFolder -> public/images
+
+`05-cloudinary-storage`
+
+```
+npm i cloudinary
+```
+
+-create base cloudinary config, connection and upload
+
+`06-storages-refactoring`
+
+- create services for app and cloudinary storages
